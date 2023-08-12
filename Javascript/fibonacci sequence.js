@@ -1,22 +1,23 @@
 function fibonacciGenerator(n) {
     var output = [];
 
-    var sum = 0;
-
-    if (n == 1) {
-        output.push(0);
-    }
-    else if (n >= 2) {
-        output.push(0, 1);
+    if (n <= 1) {
+        output = [0];
     }
 
-    for (var i = 1; i <= n; i++) {
-        sum = output[i] + output[i - 1];
-        output.push(sum);
+    else if (n === 2) {
+        output = [0, 1];
     }
 
+    else {
+        output = [0, 1];
+
+        for (var i = 2; i < n; i++) {
+            output.push(output[i - 2] + output[i - 1]);
+        }
+    }
     console.log(output);
 
 }
 
-fibonacciGenerator(5);
+fibonacciGenerator(10);
