@@ -8,6 +8,7 @@ for (var i = 0; i < numButtonArr; i++) {
 
         var buttonInnerHTML = this.innerHTML;
         playSound(buttonInnerHTML);
+        popAnim(buttonInnerHTML);
 
     });
 }
@@ -16,6 +17,7 @@ document.addEventListener("keydown", function EveLis(event) {
 
     keyData = event.key;
     playSound(keyData);
+    popAnim(keyData);
 });
 
 function playSound(key) {
@@ -58,4 +60,19 @@ function playSound(key) {
         default:
             console.log(key);
     }
+}
+
+function popAnim(keyTrig) {
+    var buttons = document.querySelectorAll("." + keyTrig);
+    //buttons.className = "pressed";
+
+    for (var j = 0; j < buttons.length; j++) {
+        buttons[j].classList.add("pressed");
+    }
+
+    setTimeout(function () {
+        for (var j = 0; j < buttons.length; j++) {
+            buttons[j].classList.remove("pressed");
+        }
+    }, 500);
 }
