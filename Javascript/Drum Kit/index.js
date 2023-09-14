@@ -63,16 +63,11 @@ function playSound(key) {
 }
 
 function popAnim(keyTrig) {
-    var buttons = document.querySelectorAll("." + keyTrig);
+    var buttons = document.querySelector("." + keyTrig);
     //buttons.className = "pressed";
 
-    for (var j = 0; j < buttons.length; j++) {
-        buttons[j].classList.add("pressed");
-    }
-
+    buttons.classList.add("pressed");
     setTimeout(function () {
-        for (var j = 0; j < buttons.length; j++) {
-            buttons[j].classList.remove("pressed");
-        }
+        buttons.classList.remove("pressed");
     }, 500);
 }
