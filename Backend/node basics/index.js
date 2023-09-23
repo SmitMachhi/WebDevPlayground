@@ -1,4 +1,4 @@
-const fs = require("node:fs");
+const fs = require('fs');
 
 fs.writeFile("message.txt", "Wasssssup Node!", (err) => {
     if (err) throw err;
