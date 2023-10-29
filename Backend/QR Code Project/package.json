@@ -1,7 +1,6 @@
 {
   "name": "qr-code-project",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,5 +8,11 @@
   },
   "keywords": [],
   "author": "Smit Machhi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.11",
+    "qr-image": "^3.2.0"
+  },
+  "devDependencies": {},
+  "description": ""
 }

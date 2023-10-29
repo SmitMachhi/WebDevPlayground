@@ -41,8 +41,9 @@ function urlValidate(url) {
 }
 
 function generateQR(url2) {
+    var fileName = "URL - " + url2.substring(4, url2.length - 4);
     var qrPNG = qr.image(url2, {type: 'png'});
-    qrPNG.pipe(fs.createWriteStream(url2 + '.png'));
+    qrPNG.pipe(fs.createWriteStream(fileName + '.png'));
 }
 
 function saveTextFile(url3) {
@@ -50,3 +51,4 @@ function saveTextFile(url3) {
         if (err) throw err;
         console.log('The file has been saved!');});
 }
+
