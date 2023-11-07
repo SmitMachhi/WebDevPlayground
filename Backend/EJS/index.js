@@ -17,14 +17,14 @@ app.get("/", (req, res) => {
 
     const whatDay = new Date;
     const day = whatDay.getDay();
-
+    
     if (day <= 5) {
-        res.render("/views/index.ejs", 
-        {weekday: "It's a weekday!" } );
+        res.render(__dirname + "/views/index.ejs", 
+        {dayType: "weekday,", advise: "time to make some money!" } );
     }
     else{
-        res.render("/views/index.ejs", 
-        {weekend: "It's the weekend!"} )
+        res.render(__dirname + "/views/index.ejs",
+        {dayType: "weekend,", advise: "time to work on the side hustle!"} )
     }
 
   });
