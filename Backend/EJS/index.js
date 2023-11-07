@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
     const whatDay = new Date;
     const day = whatDay.getDay();
     
-    if (day <= 5) {
+    if (day === 0 || day === 6) {
         res.render(__dirname + "/views/index.ejs", 
         {dayType: "weekday,", advise: "time to make some money!" } );
     }
