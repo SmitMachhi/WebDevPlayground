@@ -9,9 +9,11 @@
 
 <body>
   <!-- Write your code here -->
-  <h1>
-    <%= fT %> <%= title %> <%= bT %>
-  </h1>
+    <% if (locals.check) {  %>
+      <h1> There Are <%= check %> Letters in your Name.</h1>
+    <% } else { %>
+      <h1>Enter Your Name 👇: </h1>
+    <% } %>
   <form action="/submit" method="POST">
     <input type="text" name="fName" placeholder="First name">
     <input type="text" name="lName" placeholder="Last name">

@@ -11,23 +11,15 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render(__dirname + "/views/index.ejs", {
-    fT: "",
-    title: "Enter Your Name:",
-    bT: "",
-  });
+  res.render(__dirname + "/views/index.ejs");
 });
 
 app.post("/submit", (req, res) => {
-  var fN = req.body["fName"];
-  var lN = req.body["lName"];
-  var out = fN.length + lN.length;
+  const fN = req.body["fName"];
+  const lN = req.body["lName"];
+  const total = fN.length + lN.length;
 
-  res.render(__dirname + "/views/index.ejs", {
-    fT: "There Are ",
-    title: out,
-    bT: "Letter In Your Name."
-  })
+  res.render(__dirname + "/views/index.ejs", { check: total, });
 });
 
 app.listen(port, () => {
