@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/layout.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Clear Slate.</title>
-</head>
-<body class="frame">
+  </head>
+  <body id="frame">
     <h1>Clear \ Slate.</h1>
-    <div id="arrange">
-    <button onclick="toggleBox()">Create</button>
-    <div id="box"></div>
+
+    <button id="button">Create</button>
+
+    <!-- <div id="box">
+      <button id="delete" onclick="deleteBox()">
+        <img src="/images/delete.png" alt="delete_button.png" id="delete" />
+      </button>
+    </div> -->
+
     <script>
-        function toggleBox() {
-        var box = document.getElementById('box');
-        if (box.style.display === 'none' || box.style.display === '') {
-            box.style.display = 'inline-flex';
-        } else {
-            box.style.display = 'none';
-        }
-    }
+      var box = document.getElementById("box");
+
+      function startBox() {
+        var inpTxt = prompt("Enter Your Text 👇");
+
+        /* var ele1 = $("div").attr({ id: "box" });
+        var ele2 = $("button").att({ id: "delete" }); */
+        var ele3 = $("img").attr({
+          src: "/images/delete.png",
+          alt: "delete_button.png",
+          id: "delete",
+        });
+        var ele4 = $("h2").text(inpTxt);
+
+        $("#frame").append(ele3);
+        /* $(ele1).append(ele2);
+        $(ele1).append(ele4);
+        $(ele2).append(ele3); */
+      }
+
+      function deleteBox() {
+        box.style.display = "none";
+      }
+
+      $("#button").on("click", function () {
+        startBox();
+      });
     </script>
-    </div>
-</body>
+  </body>
 </html>
