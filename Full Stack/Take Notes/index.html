@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Take/Notes. - A Minimalistic Notes App | Clutterfree Mind.</title>
+    <meta
+      name="title"
+      content="Take Notes. - Minimalistic Notes | Clutterfree Mind."
+    />
+    <meta
+      name="description"
+      content="Your brain is for having ideas not storing them. Take notes in a Minimalistic app to keep your mind clutter free."
+    />
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+    <script src="./src/js/theme.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <link rel="stylesheet" href="./src/css/style.css" />
+
+    <script type="module" src="/src/js/app.js"></script>
+  </head>
+  <body>
+    <header class="sidebar" data-sidebar>
+      <div class="wrapper wrapper-1">
+        <a href="/">
+          <img
+            src="./src/images/logo-light.svg"
+            alt="Take/Notes."
+            class="logo-light"
+          />
+          <img
+            src="./src/images/logo-dark.svg"
+            alt="Take/Notes."
+            class="logo-dark"
+          />
+
+          <button
+            class="menu-btn icon-btn large"
+            aria-label="Close Menu"
+            data-sidebar-toggler
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >close
+            </span>
+
+            <div class="state-layer"></div>
+          </button>
+        </a>
+      </div>
+
+      <button class="fab" data-note-create-btn>
+        <span class="material-symbols-rounded" aria-hidden="true">add</span>
+        <span class="text text-label-large">New Note</span>
+      </button>
+
+      <div class="wrapper wrapper-2">
+        <h2 class="text-title-small">NOTEBOOKS</h2>
+        <button
+          class="icon-btn small"
+          data-tooltip="Create New Notebook"
+          aria-label="Create New Notebook"
+          data-add-notebook
+        >
+          <span class="material-symbols-rounded" aria-hidden="true">add</span>
+          <div class="state-layer"></div>
+        </button>
+      </div>
+
+      <nav class="nav custom-scrollbar" data-sidebar-list>
+        <div class="nav-item active">
+          <span class="text text-label-large" data-notebook-field
+            >My Notebook</span
+          >
+
+          <button
+            class="icon-btn small"
+            aria-label="Edit Notebook"
+            data-tooltip="Edit Notebook"
+            data-edit-btn
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >edit</span
+            >
+            <div class="state-layer"></div>
+          </button>
+
+          <button
+            class="icon-btn small"
+            aria-label="Delete Notebook"
+            data-tooltip="Delete Notebook"
+            data-delete-btn
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >delete</span
+            >
+            <div class="state-layer"></div>
+          </button>
+        </div>
+
+        <div class="nav-item">
+          <span class="text text-label-large" data-notebook-field
+            >My Notebook</span
+          >
+
+          <button
+            class="icon-btn small"
+            aria-label="Edit Notebook"
+            data-tooltip="Edit Notebook"
+            data-edit-btn
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >edit</span
+            >
+            <div class="state-layer"></div>
+          </button>
+
+          <button
+            class="icon-btn small"
+            aria-label="Delete Notebook"
+            data-tooltip="Delete Notebook"
+            data-delete-btn
+          >
+            <span class="material-symbols-rounded" aria-hidden="true"
+              >delete</span
+            >
+            <div class="state-layer"></div>
+          </button>
+        </div>
+      </nav>
+
+      <div class="cp-info">
+        <span class="text-label-large"
+          >Copyright 2024 <strong>@DistractedMonkey</strong></span
+        >
+      </div>
+    </header>
+
+    <div class="overlay active" data-sidebar-overlay data-sidebar-toggler></div>
+    <main class="main">
+      <div class="header">
+        <div class="wrapper">
+          <p class="title text-title-large" data-greeting>Howdy!</p>
+          <span class="text text-body-medium" data-current-date
+            >Sat, Feb 23 2024</span
+          >
+        </div>
+        <button
+          class="theme-btn icon-btn large"
+          aria-label="Toggle Theme"
+          data-tooltip="Toggle theme"
+          data-theme-btn
+        >
+          <span class="material-symbols-rounded dark-icon" aria-hidden="true"
+            >dark_mode</span
+          >
+          <span class="material-symbols-rounded light-icon" aria-hidden="true"
+            >light_mode</span
+          >
+          <div class="state-layer"></div>
+        </button>
+        <button
+          class="menu-btn icon-btn large"
+          aria-label="Open menu"
+          data-sidebar-toggler
+        >
+          <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+          <div class="state-layer"></div>
+        </button>
+      </div>
+      <h2 class="title text-title-medium" data-note-panel-title>My Notebook</h2>
+      <!--Note List -->
+      <div class="note-list" data-note-panel>
+        <div class="card">
+          <h3 class="card-title text-title-medium">Note Title</h3>
+          <p class="card-text text-body-large">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Repellendus reiciendis quo sunt vel magnam perspiciatis quod,
+            architecto, doloribus expedita ullam suscipit tempora excepturi
+            quasi quisquam ad veritatis minima? Nisi, dolores?
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
